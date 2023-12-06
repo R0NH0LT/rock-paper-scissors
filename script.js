@@ -24,7 +24,7 @@ const computerSelection = getComputerChoice();
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
-        return "It's a tie!";
+        return "It's a tie! Try again...";
     } else if (
         (playerSelection === rock && computerSelection === scissors) ||
         (playerSelection === paper && computerSelection === rock) ||
@@ -38,21 +38,8 @@ function playRound(playerSelection, computerSelection) {
 
 // below is where the results of the games are displayed in the console for now
 
-console.log(playRound(playerSelection, computerSelection));
 console.log('Computer: ' + computerSelection);
 console.log('Player: ' + playerSelection);
+console.log(playRound(playerSelection, computerSelection));
 
 // below is where the overall score is kept track of
-
-const playerScore = 0;
-const computerScore = 0;
-
-function game(playerScore, computerScore) {
-    for (let i = 0; i < 5; i++) {
-        const playerSelection = getPlayerChoice();
-        const computerSelection = getComputerChoice();
-        console.log(playRound(playerSelection, computerSelection));
-    }
-}
-
-console.log(game());
