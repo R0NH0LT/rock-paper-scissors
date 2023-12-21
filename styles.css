@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #333;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* THE START OF THE HEADER */
+
+header {
+    background-color: #000;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+    font-size: 35px;
+}
+
+header h1 {
+    padding: 40px 0;
+    height: 100%;
+}
+
+header p {
+    height: 100%;
+}
+
+/* THE END OF THE HEADER */
+
+/* THE START OF THE MAIN */
+
+main {
+    width: 100%;
+    height: 75%;
+}
+
+.img-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.rock-container, 
+.paper-container, 
+.scissors-container {
+    border: 1px solid #333;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.rock-container {
+    background: url("/photos/artem-kniaz-Z9_pOnIbgjg-unsplash.jpg");
+    background-size: cover;
+    background-position: 12% 85%;
+}
+
+.paper-container {
+    background: url("/photos/annie-spratt-5cFwQ-WMcJU-unsplash.jpg");
+    background-size: cover;
+    background-position: 10% 90%;
+}
+
+.scissors-container {
+    background: url("/photos/brina-blum-jBxqFcnLY9M-unsplash.jpg");
+    background-size: cover;
+    background-position: 95% 5%;
+}
+
+/* THE END OF THE MAIN */
+
+/* THE START OF THE FOOTER */
+
+footer {
+    background-color: #000;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+    font-size: 35px;
+}
+
+/* THE END OF THE FOOTER */

@@ -11,9 +11,9 @@ const choices = [rock, paper, scissors];
 function getComputerChoice() {
     return choices[Math.floor(Math.random() * choices.length)];
 }
-function getPlayerChoice() {
-    return prompt("Choose rock, paper, or scissors");
-}
+// function getPlayerChoice() {
+//     return prompt("Choose rock, paper, or scissors");
+// }
 
 // below is where the player and computer's choices are saved to variables here
 
