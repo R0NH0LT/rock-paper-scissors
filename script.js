@@ -1,4 +1,4 @@
-console.log("Rock Paper Scissors");
+// console.log("Rock Paper Scissors");
 
 const rock = "rock";
 const paper = "paper";
