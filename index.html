@@ -14,7 +14,7 @@
     <header>
         <div id="player1-container">
             <h4 id="whoIsPlaying">Player</h4>
-            <h2 id="score">1</h2>
+            <h2 id="playerScore">0</h2>
         </div>
         <div class="game-title">
             <h1>Rock</h1>
@@ -25,20 +25,14 @@
         </div>
         <div id="computer-container">
             <h4 id="whoIsPlaying">Computer</h4>
-            <h2 id="score">0</h2>
+            <h2 id="computerScore">0</h2>
         </div>
     </header>
     <main>
-        <div class="img-container">
-            <div id="rock-container" class="clickable-div">
-                <!-- <img id="rock" src="photos/artem-kniaz-Z9_pOnIbgjg-unsplash.jpg" alt="stacked brown rocks"> -->
-            </div>
-            <div id="paper-container" class="clickable-div">
-                <!-- <img id="paper" src="photos/annie-spratt-5cFwQ-WMcJU-unsplash.jpg" alt="white printer paper lot"> -->
-            </div>
-            <div id="scissors-container" class="clickable-div">
-                <!-- <img id="scissors" src="photos/brina-blum-jBxqFcnLY9M-unsplash.jpg" alt="a pair of scissors sitting on top of a wooden block"> -->
-            </div>
+        <div id="choices">
+            <div id="rock-container" class="clickableDiv" onclick="handleClick('rock')"></div>
+            <div id="paper-container" class="clickableDiv" onclick="handleClick('paper')"></div>
+            <div id="scissors-container" class="clickableDiv" onclick="handleClick('scissors')"></div>
         </div>
     </main>
     <footer></footer>

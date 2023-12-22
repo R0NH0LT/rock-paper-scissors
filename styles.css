@@ -45,7 +45,8 @@ header {
 }
 
 #whoIsPlaying,
-#score {
+#computerScore,
+#playerScore {
     font-size: 35px;
 }
 
@@ -58,7 +59,7 @@ main {
     height: 75%;
 }
 
-.img-container {
+#choices {
     width: 100%;
     height: 100%;
     display: flex;
@@ -79,6 +80,7 @@ main {
     align-items: center;
     background-size: cover;
     cursor: pointer;
+    filter: grayscale(100%) contrast(50%);
 }
 
 #rock-container {
@@ -97,6 +99,14 @@ main {
     background: url("/photos/brina-blum-jBxqFcnLY9M-unsplash.jpg");
     background-size: cover;
     background-position: 95% 5%;
+}
+
+@media (hover: hover) {
+    #rock-container:hover, 
+    #paper-container:hover, 
+    #scissors-container:hover {
+        filter: grayscale(0%);
+    }
 }
 
 /* THE END OF THE MAIN */
