@@ -11,6 +11,7 @@
     <title>Rock.Paper.Scissors</title>
 </head>
 <body>
+    
     <header>
         <div id="player1-container">
             <h4 id="whoIsPlaying">Player</h4>
@@ -29,13 +30,18 @@
         </div>
     </header>
     <main>
+        
         <div id="choices">
             <div id="rock-container" class="clickableDiv" onclick="handleClick('rock')"></div>
             <div id="paper-container" class="clickableDiv" onclick="handleClick('paper')"></div>
             <div id="scissors-container" class="clickableDiv" onclick="handleClick('scissors')"></div>
         </div>
     </main>
-    <footer></footer>
+    <footer>
+        <div class="overlay"></div>
+        <button class="Btn" id="playButton">PLAY GAME</button>
+        <!-- <p id="startGame">Make Your Choice!</p> -->
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>

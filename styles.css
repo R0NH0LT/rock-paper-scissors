@@ -4,10 +4,22 @@
     box-sizing: border-box;
 }
 
+/* #imageToGray {
+    transition: flter 0.5s ease;
+} */
+
+/* .grayed {
+    filter: grayscale(100%);
+} */
+
+#hiddenButton {
+    display: none;
+}
+
 body {
     background-color: #333;
     height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 /* THE START OF THE HEADER */
@@ -25,6 +37,8 @@ header {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    position: sticky;
+    z-index: 1;
 }
 
 #player1-container, 
@@ -80,7 +94,7 @@ main {
     align-items: center;
     background-size: cover;
     cursor: pointer;
-    filter: grayscale(100%) contrast(50%);
+    filter: blur(10px) contrast(50%);
 }
 
 #rock-container {
@@ -124,6 +138,45 @@ footer {
     color: #fff;
     font-family: "Roboto", sans-serif;
     font-size: 35px;
+    position: sticky;
+    z-index: 1;
+}
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: block;
+}
+
+#playButton {
+    border: 1px solid #fff;
+    border-radius: 20px;
+    background-color: #333;
+    font-family: 'Cinzel', serif;
+    color: #fff;
+    font-size: 80px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 30px;
+    position: absolute;
+    z-index: 4;
+    bottom: 40rem;
+    box-shadow: 0 15px 20px #000;
+    transition: all 0.3s ease-in-out;
+}
+
+@media (hover: hover) {
+    #playButton:hover {
+        transform: translateY(-2rem);
+        border-color: yellow;
+        color: yellow;
+    }
 }
 
 /* THE END OF THE FOOTER */
