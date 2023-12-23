@@ -14,7 +14,7 @@
     
     <header>
         <div id="player1-container">
-            <h4 id="whoIsPlaying">Player</h4>
+            <h4 id="whoIsPlaying">You!</h4>
             <h2 id="playerScore">0</h2>
         </div>
         <div class="game-title">
@@ -30,7 +30,6 @@
         </div>
     </header>
     <main>
-        
         <div id="choices">
             <div id="rock-container" class="clickableDiv" onclick="handleClick('rock')"></div>
             <div id="paper-container" class="clickableDiv" onclick="handleClick('paper')"></div>
@@ -40,7 +39,9 @@
     <footer>
         <div class="overlay"></div>
         <button class="Btn" id="playButton">PLAY GAME</button>
-        <!-- <p id="startGame">Make Your Choice!</p> -->
+        <p id="startGame" style="display: none;">Round: <span id="roundNumber">1</span></p>
+        <p id="gameOver" style="display: none;">Game Over!</p>
+        <button class="Btn" id="resetButton" style='display: none;' onclick'="resetScores()">RESTART GAME</button>
     </footer>
     <script src="script.js"></script>
 </body>

@@ -17,9 +17,9 @@
 }
 
 body {
-    background-color: #333;
+    background-color: #000;
     height: 100vh;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 /* THE START OF THE HEADER */
@@ -35,8 +35,9 @@ header {
     color: #fff;
     font-family: 'Cinzel', serif;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
+    gap: 20%;
     position: sticky;
     z-index: 1;
 }
@@ -130,7 +131,7 @@ main {
 footer {
     background-color: #000;
     width: 100%;
-    height: 20%;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -148,13 +149,15 @@ footer {
     top: 0;
     left: 0;
     right: 0;
+    bottom: 0;
     width: 100%;
     height: 100%;
     z-index: 2;
     display: block;
 }
 
-#playButton {
+#playButton,
+#resetButton {
     border: 1px solid #fff;
     border-radius: 20px;
     background-color: #333;
@@ -166,7 +169,7 @@ footer {
     padding: 30px;
     position: absolute;
     z-index: 4;
-    bottom: 40rem;
+    bottom: 25rem;
     box-shadow: 0 15px 20px #000;
     transition: all 0.3s ease-in-out;
 }
@@ -177,6 +180,14 @@ footer {
         border-color: yellow;
         color: yellow;
     }
+}
+
+#startGame, 
+#gameOver {
+    padding: 40px 0;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    font-size: 60px;
 }
 
 /* THE END OF THE FOOTER */
