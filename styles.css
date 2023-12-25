@@ -4,14 +4,6 @@
     box-sizing: border-box;
 }
 
-/* #imageToGray {
-    transition: flter 0.5s ease;
-} */
-
-/* .grayed {
-    filter: grayscale(100%);
-} */
-
 #hiddenButton {
     display: none;
 }
@@ -23,10 +15,6 @@ body {
 }
 
 /* THE START OF THE HEADER */
-
-/* header * {
-    border: 1px solid #fff;
-} */
 
 header {
     height: 10%;
@@ -103,19 +91,19 @@ main {
 }
 
 #rock-container {
-    background: url("/photos/artem-kniaz-Z9_pOnIbgjg-unsplash.jpg");
+    background: url("photos/artem-kniaz-Z9_pOnIbgjg-unsplash.jpg");
     background-size: cover;
     background-position: 12% 85%;
 }
 
 #paper-container {
-    background: url("/photos/annie-spratt-5cFwQ-WMcJU-unsplash.jpg");
+    background: url("photos/annie-spratt-5cFwQ-WMcJU-unsplash.jpg");
     background-size: cover;
     background-position: 10% 90%;
 }
 
 #scissors-container {
-    background: url("/photos/brina-blum-jBxqFcnLY9M-unsplash.jpg");
+    background: url("photos/brina-blum-jBxqFcnLY9M-unsplash.jpg");
     background-size: cover;
     background-position: 95% 5%;
 }
