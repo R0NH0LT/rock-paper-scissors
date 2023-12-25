@@ -91,19 +91,19 @@ main {
 }
 
 #rock-container {
-    background: url("/photos/artem-kniaz-Z9_pOnIbgjg-unsplash.webp");
+    background: url("photos/artem-kniaz-Z9_pOnIbgjg-unsplash.webp");
     background-size: cover;
     background-position: 12% 85%;
 }
 
 #paper-container {
-    background: url("/photos/annie-spratt-5cFwQ-WMcJU-unsplash.webp");
+    background: url("photos/annie-spratt-5cFwQ-WMcJU-unsplash.webp");
     background-size: cover;
     background-position: 10% 90%;
 }
 
 #scissors-container {
-    background: url("/photos/brina-blum-jBxqFcnLY9M-unsplash.webp");
+    background: url("photos/brina-blum-jBxqFcnLY9M-unsplash.webp");
     background-size: cover;
     background-position: 95% 5%;
 }
