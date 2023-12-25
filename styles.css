@@ -35,11 +35,14 @@ header {
     color: #fff;
     font-family: 'Cinzel', serif;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    gap: 10%;
     position: sticky;
     z-index: 1;
+}
+
+#player1-container {
+    margin-right: 2.5%;
 }
 
 #player1-container, 
@@ -51,9 +54,10 @@ header {
     align-items: center;
 }
 
-.game-title {
+#gameTitle,
+#declaredWinner {
     padding: 20px 0;
-    font-size: 35px;
+    font-size: 70px;
     display: flex;
     align-items: center;
     gap: 30px;

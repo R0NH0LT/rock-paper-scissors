@@ -6,13 +6,17 @@ const choicesArray = ['rock', 'paper', 'scissors'];
 // these are the score displays
 const playerScoreDisplay = document.querySelector('#playerScore');
 const computerScoreDisplay = document.querySelector('#computerScore');
-const roundNumber = document.querySelector('#round');
+const roundNumberDisplay = document.querySelector('#roundNumber');
 const roundCounter = document.querySelector('#roundCounter');
 // the start game button, and the overlay, and the game over
 const playButton = document.querySelector('#playButton');
 const overlay = document.querySelector('.overlay');
 const gamePrompt = document.querySelector('#gamePrompt');
 const gameOver = document.querySelector('#gameOver');
+const gameTitle = document.querySelector('#gameTitle');
+const declaredWinner = document.querySelector('#declaredWinner');
+const player1 = document.querySelector('#player1-container');
+const computer = document.querySelector('#computer-container');
 const resetButton = document.querySelector('#resetButton');
 
 
@@ -42,6 +46,9 @@ console.log(computerPlay());
 
 function playRound(playerChoice, computerChoice) {
     if (playerChoice === computerChoice) {
+        roundValue++;
+        updateRound();
+        updateScoreBoard();
         return 'Tie!';
     } else if (
         (playerChoice === 'rock' && computerChoice === 'scissors') ||
@@ -49,39 +56,64 @@ function playRound(playerChoice, computerChoice) {
         (playerChoice === 'scissors' && computerChoice === 'paper')
     ) {
         playerScoreValue++;// Update player score display
+        roundValue++;
+        updateRound();
+        updateScoreBoard();
         return 'You win!';
     } else {
         computerScoreValue++; // Update computer score display
+        roundValue++;
+        updateRound();
+        updateScoreBoard();
         return 'You lose!';
     }
 }
 
-function updateScore() {
+function updateScoreBoard() {
     playerScoreDisplay.textContent = playerScoreValue;
     computerScoreDisplay.textContent = computerScoreValue;
+    roundNumberDisplay.textContent = roundValue;
 }
 
 function updateRound() {
     if (roundValue < 5) {
-        roundValue++;
+        return;
+    } else if (roundValue === 5) {
+        roundValue = 1;
+        endGame();
+    }
+}
+
+function endGame() {
+    if (playerScoreValue > computerScoreValue) {
+        gameTitle.style.display = 'none';
+        declaredWinner.textContent = 'You win!';
+        declaredWinner.style.display = 'block';
+        player1.style.color = 'green';
+        computer.style.color = 'red';
+        gameOver.style.display = 'block';
+        resetButton.style.display = 'block';
+        roundCounter.style.display = 'none';
+    } else if (playerScoreValue < computerScoreValue) {
+        gameTitle.style.display = 'none';
+        declaredWinner.textContent = 'You lose!';
+        declaredWinner.style.display = 'block';
+        player1.style.color = 'red';
+        computer.style.color = 'green';
+        gameOver.style.display = 'block';
+        resetButton.style.display = 'block';
+        roundCounter.style.display = 'none';
     } else {
-        if (playerScoreValue > computerScoreValue) {
-            gamePrompt.textContent = 'You win!';
-            gameOver.style.display = 'block';
-            resetButton.style.display = 'block';
-            roundCounter.style.display = 'none';
-        } else if (playerScoreValue < computerScoreValue) {
-            gamePrompt.textContent = 'You lose!';
-            gameOver.style.display = 'block';
-            resetButton.style.display = 'block';
-            roundCounter.style.display = 'none';
-        } else {
-            gamePrompt.textContent = 'It\'s a tie!';
-            gameOver.style.display = 'block';
-            resetButton.style.display = 'block';
-            roundCounter.style.display = 'none';
-        }
-        computerPlay();
+        gameTitle.style.display = 'none';
+        declaredWinner.textContent = 'It\'s a tie!';
+        declaredWinner.style.display = 'block';
+        player1.style.color = 'brown';
+        computer.style.color = 'brown';
+        gameOver.style.display = 'block';
+        resetButton.style.display = 'block';
+        roundCounter.style.display = 'none';
+    }{
+        return;
     }
 }
 
@@ -95,6 +127,10 @@ function resetGame() {
     roundCounter.style.display = 'block';
     gameOver.style.display = 'none';
     gamePrompt.style.display = 'block';
+    gameTitle.style.display = 'block';
+    declaredWinner.style.display = 'none';
+    player1.style.color = 'white';
+    computer.style.color = 'white';
 
     setTimeout(() => {
         gamePrompt.style.display = 'none';
@@ -104,23 +140,14 @@ function resetGame() {
 rock.addEventListener('click', () => {
     const computerChoice = computerPlay();
     const result = playRound('rock', computerChoice);
-    gamePrompt.textContent = result;
-    updateScore();
-    updateRound();
 })
 paper.addEventListener('click', () => {
     const computerChoice = computerPlay();
     const result = playRound('paper', computerChoice);
-    gamePrompt.textContent = result;
-    updateScore();
-    updateRound();
 })
 scissors.addEventListener('click', () => {
     const computerChoice = computerPlay();
     const result = playRound('scissors', computerChoice);
-    gamePrompt.textContent = result;
-    updateScore();
-    updateRound();
 })
 
 resetButton.addEventListener('click', resetGame);
